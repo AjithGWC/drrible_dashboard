@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icon@0.1.0/css/feather.min.css">
+    </head>
+    <style>
+      .dark{
+        background-color: #161819;
+      }
+      .grey{
+        background-color: #252728;
+      }
+      .border-b{
+        border-color: gray; 
+        border-bottom-width: 1px;
+      }
+      .absolute {
+        position: absolute;
+        top: 12%;
+        left: 74%;
+        z-index: 10;
+      }
+      select{
+        border-color: white;
+        border-style: solid;
+        border-width: thin;
+        border-radius: 8px;
+        height: 50px;
+      }
+      .round{
+        border-radius: 10px;
+      }
+      .border-radius-20{
+        border-radius: 22px;
+      }
+      .notification.notification--bullet:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 10px;
+        right: 14px;
+        border-radius: 9999px;
+        --tw-bg-opacity: 1;
+        background-color: red;
+      }
+      .text-danger{
+        color: #b95951;
+      }
+      .bg-gray{
+        background-color: #2c3032;
+      }
+      .bar {
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    </style>
+    <body class="dark">
+      <div class="flex h-screen">
+        <div class="w-64 flex flex-col">
+            <div class="p-6">
+                <img src="images/logo.png">
+            </div>
+            <div class="text-center ml-2 text-white">
+              <a class="flex p-4">
+                  <div class="grid mr-4 place-items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+                      </svg>
+                  </div>
+                  <div class="menu__title text-2xl"> Home </div>
+              </a>
+              <a class="flex p-4">
+                <div class="grid mr-4 place-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user block mx-auto">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="menu__title text-2xl"> Candidates </div>
+              </a>
+              <a class="flex p-4">
+                <div class="grid mr-4 place-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square block mx-auto">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <div class="menu__title text-2xl"> Message </div>
+              </a>
+              <a class="flex p-4">
+                <div class="grid mr-4 place-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" 
+                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar block mx-auto">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="menu__title text-2xl"> Schedule </div>
+              </a>
+              <a class="flex p-4">
+                <div class="grid mr-4 place-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" 
+                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart block mx-auto">
+                    <line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line>
+                  </svg>
+                </div>
+                <div class="menu__title text-2xl"> Reports </div>
+              </a>
+              <a class="flex p-4">
+                <div class="grid mr-4 place-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" 
+                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle block mx-auto"><circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <div class="menu__title text-2xl"> Help </div>
+              </a>
+            </div>
+        </div>
+        <div class="flex-1 flex flex-col">
+          <header class="text-white p-4">
+            <p class="text-2xl">Hello! Naino</p>
+          </header>
+          <div class="bg-black flex-1 p-6" style="border-radius: 6px;">
+            <div class="relative grey flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl">
+              <div class="p-6 flex">
+                <div class="flex-1 flex flex-col p-2">
+                  <div class="flex d-flex">
+                    <div>
+                      <h4>Total Application</h4>
+                      <h3>1202</h3>
+                      <h4>During 3 Month</h4>
+                    </div>
+                    <div class="flex-none ml-auto relative">
+                      <canvas id="report-donut-chart-1" width="90" height="90"></canvas>
+                      <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#4b40af">75%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1 flex flex-col p-2 px-5">
+                  <div class="flex d-flex">
+                    <div>
+                      <h4>Total Application</h4>
+                      <h3>1202</h3>
+                      <h4>During 3 Month</h4>
+                    </div>
+                    <div class="flex-none ml-auto relative">
+                      <canvas id="report-donut-chart-2" width="90" height="90"></canvas>
+                      <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#9433df">65%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-1 flex flex-col p-2">
+                  <div class="flex d-flex">
+                    <div>
+                      <h4>Total Application</h4>
+                      <h3>1202</h3>
+                      <h4>During 3 Month</h4>
+                    </div>
+                    <div class="flex-none ml-auto relative">
+                      <canvas id="report-donut-chart-3" width="90" height="90"></canvas>
+                      <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#d326e2">55%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="flex-1 flex flex-col p-2">
+                <div class="relative grey flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl">
+                  <div class="flex-none p-11 relative">
+                    <canvas id="report-donut-chart-4" width="10" height="10"></canvas>
+                    <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#d326e2">
+                      <img src="images/img-1.png" width="63%" height="63%" style="border-radius: 85px;">
+                    </div>
+                    <div class="absolute">1st</div>
+                  </div>
+                  <div class="p-2 text-center">
+                    <h2 class="text-lg">Ajith Kumar</h2>
+                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-md p-1">Total Point : 530</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 flex flex-col p-2">
+                <div class="relative grey flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl">
+                  <div class="flex-none p-11 relative">
+                    <canvas id="report-donut-chart-5" width="10" height="10"></canvas>
+                    <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#d326e2">
+                      <img src="images/img-2.png" width="60%" height="60%" style="border-radius: 70px;">
+                    </div>
+                    <div class="absolute">2nd</div>
+                  </div>
+                  <div class="p-2 text-center">
+                    <h2 class="text-lg">Ajith Kumar</h2>
+                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-md p-1">Total Point : 530</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 flex flex-col p-2">
+                <div class="relative grey flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl">
+                  <div class="flex-none p-11 relative">
+                    <canvas id="report-donut-chart-6" width="10" height="10"></canvas>
+                    <div class="font-medium absolute w-full h-full flex items-center justify-center top-0 left-0" style="color:#d326e2">
+                      <img src="images/img-3.png" width="60%" height="60%" style="border-radius: 70px;">
+                    </div>
+                    <div class="absolute">3rd</div>
+                  </div>
+                  <div class="p-2 text-center">
+                    <h2 class="text-lg">Ajith Kumar</h2>
+                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-md p-1">Total Point : 530</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative flex flex-col w-full text-gray-700 grey p-2 shadow-md rounded-xl bg-clip-border" style="margin-top: 25px;">
+              <table class="w-full text-left table-auto text-white">
+                <div class="flex d-flex p-2 pt-6">
+                  <h1 class="text-white text-3xl">Interview Schedule</h1>
+                  <select class="grey text-white w-40 ml-auto">
+                    <option class="ml-2">Today</option>
+                  </select>
+                </div>
+                <thead>
+                  <tr>
+                    <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-none opacity-70">
+                        Candidate Name
+                      </p>
+                    </th>
+                    <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-none opacity-70">
+                        Post Name
+                      </p>
+                    </th>
+                    <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-none opacity-70">
+                        Designatoion
+                      </p>
+                    </th>
+                    <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-none opacity-70">
+                        Time
+                      </p>
+                    </th>
+                    <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-none opacity-70">
+                        Status
+                      </p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-4 border-blue-gray-50 w-64">
+                      <div class="flex d-flex">
+                        <img src="images/tb-1.png" width="30%" height="10%" style="border-radius: 70px;">
+                        <p class="block font-sans antialiased mt-4 font-normal leading-normal text-lg">
+                          John Michael
+                        </p>
+                      </div>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Manager
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Backend
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        23/04/18
+                      </p>
+                    </td>
+                    <td class="w-64">
+                      <button class="text-blue-900 mr-4 hover:bg-gray-100 font-semibold py-2 px-4 border round shadow w-64" style="border-color: blue;">
+                        Incompleted
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 border-blue-gray-50 w-64">
+                      <div class="flex d-flex">
+                        <img src="images/tb-2.png" width="30%" height="10%" style="border-radius: 70px;">
+                        <p class="block font-sans text-lg antialiased mt-4 font-normal leading-normal text-blue-gray-900">
+                          John Michael
+                        </p>
+                      </div>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Developer
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Backend
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        23/04/18
+                      </p>
+                    </td>
+                    <td class="w-64">
+                      <button class="text-green-900 mr-4 hover:bg-gray-100 font-semibold py-2 px-4 border round shadow w-64" style="border-color: green;">
+                        Completed
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 border-blue-gray-50 w-64">
+                      <div class="flex d-flex">
+                        <img src="images/tb-3.png" width="30%" height="10%" style="border-radius: 70px;">
+                        <p class="block font-sans text-lg antialiased mt-4 font-normal leading-normal text-blue-gray-900">
+                          John Michael
+                        </p>
+                      </div>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Executive
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        Backend
+                      </p>
+                    </td>
+                    <td class="p-4 border-blue-gray-50">
+                      <p class="block font-sans text-lg antialiased font-normal leading-normal text-blue-gray-900">
+                        19/09/17
+                      </p>
+                    </td>
+                    <td class="w-64">
+                      <button class="mr-4 hover:bg-gray-100 font-semibold py-2 px-4 border round shadow w-64" style="border-color: orange;color: orange;">
+                        Processing
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <footer class="text-white p-5">
+          </footer>
+        </div>
+        <div class="w-90 flex flex-col">
+          <div class="p-6 flex d-flex">
+            <div class="relative flex gap-2 grey p-3 w-40">
+              <div class="flex d-flex">
+                <label class="DocSearch-MagnifierLabel" for="docsearch-input" id="docsearch-label"><svg width="20" height="20" class="DocSearch-Search-Icon text-white" viewBox="0 0 20 20">
+                  <path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" 
+                  stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </label>
+                <input class="DocSearch-Input grey ml-2 w-28" aria-autocomplete="both" aria-labelledby="docsearch-label" id="docsearch-input" autocomplete="off" 
+                  autocorrect="off" autocapitalize="off" enterkeyhint="search" spellcheck="false" placeholder="Search Game" maxlength="64" type="search" value="">
+              </div>
+            </div>
+            <div class="dropdown-toggle notification relative notification--bullet cursor-pointer ml-5 grey p-3 mt-1 border-radius-20" role="button" aria-expanded="false" data-tw-toggle="dropdown"> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" 
+              stroke-linejoin="round" class="feather feather-bell notification__icon dark:text-slate-500"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+            </div>
+            <div class="dropdown-toggle notification relative notification--bullet cursor-pointer ml-5 grey p-3 mt-1 border-radius-20" role="button" aria-expanded="false" data-tw-toggle="dropdown"> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings block mx-auto dark:text-slate-500"><circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="p-4 ml-3 mt-2 flex d-flex">
+            <div class="text-white text-2xl">Recommended Job</div>
+            <div class="text-danger text-lg mt-1 ml-auto">See All</div>
+          </div>
+          <div class="p-4 ml-3 mt-2">
+            <div class="grey round p-2 flex d-flex">
+              <div class="mt-1 ml-2">
+                <img src="images/n.png" width="80%" height="80%">
+              </div>
+              <div class="ml-4 text-white">
+                <h1 class="text-2xl">UI/UX Designer</h1>
+                <h1 class="text-lg">Global Corporation</h1>
+                <div class="flex d-flex mt-2">
+                  <button class="mr-4 hover:bg-gray-100 font-semibold py-1 px-3 round bg-gray shadow" style="color: brown;">
+                    Remove
+                  </button>
+                  <button class="mr-4 hover:bg-gray-100 font-semibold py-1 px-3 bg-gray round shadow" style="color: lightskyblue;">
+                    Full Time
+                  </button>
+                </div>
+              </div>
+              <div class="ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+                  class="feather feather-more-horizontal text-white block mx-auto"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 ml-3 mt-2">
+            <div class="grey round p-2 flex d-flex">
+              <div class="mt-1 ml-2">
+                <img src="images/code.png" width="80%" height="80%">
+              </div>
+              <div class="ml-4 text-white">
+                <h1 class="text-2xl">Website Designer</h1>
+                <h1 class="text-lg">Strting Corporation</h1>
+                <div class="flex d-flex mt-2">
+                  <button class="mr-4 hover:bg-gray-100 font-semibold py-1 px-3 bg-gray round shadow" style="color: lightskyblue;">
+                    Full Time
+                  </button>
+                  <button class="mr-4 hover:bg-gray-100 font-semibold py-1 px-3 round bg-gray shadow" style="color: brown;">
+                    Remove
+                  </button>
+                </div>
+              </div>
+              <div class="ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+                  class="feather feather-more-horizontal text-white block mx-auto"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 ml-3 mt-2">
+            <div class="grey round p-2 flex d-flex">
+              <div class="mt-1 ml-2">
+                <img src="images/web.png" width="85%" height="85%">
+              </div>
+              <div class="ml-4 text-white">
+                <h1 class="text-2xl">Website Designer</h1>
+              </div>
+              <div class="ml-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+                  class="feather feather-more-horizontal text-white block mx-auto"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 ml-3 mt-2">
+            <div class="grey round">
+              <div class=" p-2 flex d-flex">
+                <div class="ml-4 text-white">
+                  <h1 class="text-2xl">Bord Instruction</h1>
+                </div>
+                <div class="ml-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+                    class="feather feather-more-horizontal text-white block mx-auto"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div class="pl-2 flex">
+                <div class="w-20 h-20 ">
+                  <img class="rounded-full" src="images/tb-1.png">
+                </div>
+                <div class="ml-1 w-20 h-20  -ml-5">
+                  <img class="rounded-full" src="images/tb-2.png">
+                </div>
+                <div class="ml-1 w-20 h-20  -ml-5">
+                  <img class="rounded-full" src="images/tb-3.png">
+                </div>
+                <div class="ml-1 w-20 h-20  -ml-5">
+                  <img class="rounded-full" src="images/tb-3.png">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 ml-3 mt-2">
+            <div class="grey p-4 round">
+              <h1 class="text-white text-2xl mb-5">Presence Report</h1>
+              <canvas class="bar" id="bars_basic" width="90" height="90"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+    </body>
+    <script src="chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+    <script>
+      var ctx = document.getElementById('bars_basic').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["Sat", "Sun", "Mon", "Tue", "Wed"],
+              datasets: [{
+                  backgroundColor: '#b95951',
+                  data: [40, 60, 70, 55, 50],
+                  borderWidth: 1,
+                  borderRadius: 70
+              }]
+          },
+          options: {
+            plugins: {
+              legend: {
+                  display: false
+              }
+            },
+            scales: {
+            x: {
+              ticks: {
+                color: 'white',
+                font: {
+                  size: 20
+                }
+              }
+            },
+            y: {
+              ticks: {
+                stepSize: 20,
+                color: 'white',
+                font: {
+                  size: 20
+                }
+              }
+            }
+          }
+          }
+      });
+
+    </script>
+</html>
