@@ -58,6 +58,10 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
       }
+      ::placeholder {
+        color:rgb(100 116 139);
+        font-size:medium;
+      }
     </style>
     <body class="dark">
       <div class="flex h-screen">
@@ -124,8 +128,8 @@
           </div>
         </div>
         <div class="flex-1 flex flex-col">
-          <header class="text-white p-4">
-            <p class="text-2xl">Hello! Naino</p>
+          <header class="text-white my-5 p-4">
+            <p class="text-2xl font-semibold">Hello! Naino</p>
           </header>
           <div class="bg-black flex-1 p-6" style="border-radius: 6px;">
             <div class="relative grey flex flex-col mt-6 text-white shadow-md bg-clip-border rounded-xl">
@@ -133,9 +137,9 @@
                 <div class="flex-1 flex flex-col p-2">
                   <div class="flex d-flex">
                     <div>
-                      <h4>Total Application</h4>
-                      <h3>1202</h3>
-                      <h4>During 3 Month</h4>
+                      <h4 class="text-xl">Total Application</h4>
+                      <h3 class="text-2xl">1202</h3>
+                      <h4 class="text-xl">During 3 Month</h4>
                     </div>
                     <div class="flex-none ml-auto relative">
                       <canvas id="report-donut-chart-1" width="90" height="90"></canvas>
@@ -146,9 +150,9 @@
                 <div class="flex-1 flex flex-col p-2 px-5">
                   <div class="flex d-flex">
                     <div>
-                      <h4>Total Application</h4>
-                      <h3>1202</h3>
-                      <h4>During 3 Month</h4>
+                      <h4 class="text-xl">Total Application</h4>
+                      <h3 class="text-2xl">1202</h3>
+                      <h4 class="text-xl">During 3 Month</h4>
                     </div>
                     <div class="flex-none ml-auto relative">
                       <canvas id="report-donut-chart-2" width="90" height="90"></canvas>
@@ -159,9 +163,9 @@
                 <div class="flex-1 flex flex-col p-2">
                   <div class="flex d-flex">
                     <div>
-                      <h4>Total Application</h4>
-                      <h3>1202</h3>
-                      <h4>During 3 Month</h4>
+                      <h4 class="text-xl">Total Application</h4>
+                      <h3 class="text-2xl">1202</h3>
+                      <h4 class="text-xl">During 3 Month</h4>
                     </div>
                     <div class="flex-none ml-auto relative">
                       <canvas id="report-donut-chart-3" width="90" height="90"></canvas>
@@ -182,9 +186,9 @@
                     <div class="absolute">1st</div>
                   </div>
                   <div class="p-2 text-center">
-                    <h2 class="text-lg">Ajith Kumar</h2>
-                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
-                    <h2 class="text-md p-1">Total Point : 530</h2>
+                    <h2 class="text-3xl">Ajith Kumar</h2>
+                    <h2 class="text-lg p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-lg p-1">Total Point : 530</h2>
                   </div>
                 </div>
               </div>
@@ -198,9 +202,9 @@
                     <div class="absolute">2nd</div>
                   </div>
                   <div class="p-2 text-center">
-                    <h2 class="text-lg">Ajith Kumar</h2>
-                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
-                    <h2 class="text-md p-1">Total Point : 530</h2>
+                    <h2 class="text-3xl">Ajith Kumar</h2>
+                    <h2 class="text-lg p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-lg p-1">Total Point : 530</h2>
                   </div>
                 </div>
               </div>
@@ -214,9 +218,9 @@
                     <div class="absolute">3rd</div>
                   </div>
                   <div class="p-2 text-center">
-                    <h2 class="text-lg">Ajith Kumar</h2>
-                    <h2 class="text-md p-1">Ajith.Kumar@gwcdata.ai</h2>
-                    <h2 class="text-md p-1">Total Point : 530</h2>
+                    <h2 class="text-3xl">Ajith Kumar</h2>
+                    <h2 class="text-lg p-1">Ajith.Kumar@gwcdata.ai</h2>
+                    <h2 class="text-lg p-1">Total Point : 530</h2>
                   </div>
                 </div>
               </div>
@@ -225,7 +229,7 @@
               <table class="w-full text-left table-auto text-white">
                 <div class="flex d-flex p-2 pt-6">
                   <h1 class="text-white text-3xl">Interview Schedule</h1>
-                  <select class="grey text-white w-40 ml-auto">
+                  <select class="grey px-5 text-white w-40 ml-auto">
                     <option class="ml-2">Today</option>
                   </select>
                 </div>
@@ -358,13 +362,13 @@
         </div>
         <div class="w-90 flex flex-col">
           <div class="p-6 flex d-flex">
-            <div class="relative flex gap-2 grey p-3 w-40">
+            <div class="relative round flex gap-2 grey p-3 w-40">
               <div class="flex d-flex">
-                <label class="DocSearch-MagnifierLabel" for="docsearch-input" id="docsearch-label"><svg width="20" height="20" class="DocSearch-Search-Icon text-white" viewBox="0 0 20 20">
+                <label class="DocSearch-MagnifierLabel mt-1" for="docsearch-input" id="docsearch-label"><svg width="20" height="20" class="DocSearch-Search-Icon" style="color:rgb(100 116 139)" viewBox="0 0 20 20">
                   <path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" 
                   stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </label>
-                <input class="DocSearch-Input grey ml-2 w-28" aria-autocomplete="both" aria-labelledby="docsearch-label" id="docsearch-input" autocomplete="off" 
+                <input class="DocSearch-Input grey ml-2 w-28 " style="color:rgb(100 116 139)" aria-autocomplete="both" aria-labelledby="docsearch-label" id="docsearch-input" autocomplete="off" 
                   autocorrect="off" autocapitalize="off" enterkeyhint="search" spellcheck="false" placeholder="Search Game" maxlength="64" type="search" value="">
               </div>
             </div>
